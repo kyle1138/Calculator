@@ -10,7 +10,7 @@
 <input type="number" id = "val2">
 </div>
 </br>
-<input type = "number" id = "answer" value = 0>
+<input id = "answer" value = 0>
 </br>
 <div>
   <ul>
@@ -34,34 +34,32 @@
   var addF = function(){
     var a = parseInt(document.querySelector("#val1").value);
     var b = parseInt(document.querySelector("#val2").value);
-    var out = a+b;
-    ans.value = out;
+    ans.value = a+b;
   }
 
   var subtractF = function(){
     var a = parseInt(document.querySelector("#val1").value);
     var b = parseInt(document.querySelector("#val2").value);
-    var out = a-b;
-    ans.value = out;
+    ans.value = a-b;
   }
 
   var multiplyF = function(){
     var a = parseInt(document.querySelector("#val1").value);
     var b = parseInt(document.querySelector("#val2").value);
-    var out = a*b;
-    ans.value = out;
+    ans.value = a*b;
   }
 
   var divideF = function(){
     var a = parseInt(document.querySelector("#val1").value);
     var b = parseInt(document.querySelector("#val2").value);
     if(a === 0 || b === 0){alert("you can't do that"); ans.value = "";}else{
-      var out = a/b;
-      ans.value = out;
+    ans.value = a/b;
     }
   }
-
-  addit.addEventListener("click", addF);
+  var calc = function(func){
+    ans.value = func();
+  }
+  addit.addEventListener("click", addF) ;
   sub.addEventListener("click", subtractF);
   mult.addEventListener("click", multiplyF);
   divide.addEventListener("click", divideF);
